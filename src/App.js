@@ -1,17 +1,37 @@
 import logo from './logo.svg';
+import { HashRouter , Routes , Route } from "react-router-dom"
+import { Navigate } from "react-router-dom";
+
 import './App.css';
 
 // npm run deploy 
-// npm install --save gh-pages
+
+//Components/Pages
+import NavBar from './components/NavBar';
+import Landing from './pages/Landing';
+import NoPage from './pages/NoPage';
+
+import About from './pages/About';
+import Education from './pages/Education';
+import Projects from './pages/Projects';
+
 
 function App() {
   return (
-    <div className="App">
-      <h1>My React App</h1>
-      <h2>Author: Emmanuel Lim</h2>
-      <h3>This edit was made before calling npm run deploy</h3>
-      {/* <img src={} alt="logo"></img> */}
-    </div>
+    <HashRouter>
+      <NavBar/>
+      <Routes>
+        {/* defaults */}
+        <Route path="/" element={<Landing/>}/>
+        <Route path="*" element={<NoPage/>}/>
+        {/* Other routing */}
+        <Route path="/about" element={<About/>}/>
+        <Route path="/education" element={<Education/>}/>
+        <Route path="/projects" element={<Projects/>}/>
+      </Routes>
+
+
+    </HashRouter>
   );
 }
 
