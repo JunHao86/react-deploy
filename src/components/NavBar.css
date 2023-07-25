@@ -1,17 +1,14 @@
 .navbar-container {
     display: flex;
-    justify-content: space-between;
     align-items: center;
     height: 40px;
 } 
 
 .navbar-nav {
-    display: flex;
-    flex-grow: 1;
-    justify-content: flex-end;
-    align-items: center;
-  }
-  
+  display: flex;
+}
+
+
 @media screen and (max-width: 992px) {
 
     ul.menu {
